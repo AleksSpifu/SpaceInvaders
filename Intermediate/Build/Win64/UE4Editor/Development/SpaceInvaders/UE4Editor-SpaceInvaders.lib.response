@@ -1,0 +1,24 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-SpaceInvaders.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\SpaceInvadersEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\SpaceInvaders.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\SpaceInvadersGameModeBase.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\Bullet.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\Enemy.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\PlayerPawn.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\GameManager.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\PlayerPawn.gen.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\GameManager.gen.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\SpaceInvadersGameModeBase.gen.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\SpaceInvaders.init.gen.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\Bullet.gen.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\Enemy.gen.cpp.obj"
+"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\Default.rc2.res"
+/OUT:"F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\UE4Editor-SpaceInvaders.lib"
+/INCLUDE:IMPLEMENT_MODULE_SpaceInvaders

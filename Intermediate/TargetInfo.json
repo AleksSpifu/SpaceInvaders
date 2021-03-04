@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "SpaceInvaders",
+			"Path": "C:\\EksternSSD\\Epic\\Prosjekter\\SpaceInvaders 4.26\\Source\\SpaceInvaders.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "SpaceInvadersEditor",
+			"Path": "C:\\EksternSSD\\Epic\\Prosjekter\\SpaceInvaders 4.26\\Source\\SpaceInvadersEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
