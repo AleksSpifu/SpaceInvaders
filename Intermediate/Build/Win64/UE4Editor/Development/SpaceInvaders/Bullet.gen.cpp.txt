@@ -1,5 +1,0 @@
-F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\Definitions.SpaceInvaders.h
-F:\Epic\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-F:\Epic\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-F:\Epic\Prosjekter\SpaceInvaders 4.26\Source\SpaceInvaders/Bullet.h
-F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Inc\SpaceInvaders\Bullet.generated.h

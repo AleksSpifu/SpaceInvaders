@@ -1,7 +1,0 @@
-F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\Definitions.SpaceInvaders.h
-F:\Epic\Prosjekter\SpaceInvaders 4.26\Source\SpaceInvaders\SpaceInvadersGameModeBase.h
-F:\Epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
-F:\Epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
-F:\Epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
-F:\Epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Inc\SpaceInvaders\SpaceInvadersGameModeBase.generated.h
