@@ -1,3 +1,0 @@
-F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Development\SpaceInvaders\Definitions.SpaceInvaders.h
-F:\Epic\Prosjekter\SpaceInvaders 4.26\Source\SpaceInvaders\Bullet.h
-F:\Epic\Prosjekter\SpaceInvaders 4.26\Intermediate\Build\Win64\UE4Editor\Inc\SpaceInvaders\Bullet.generated.h
