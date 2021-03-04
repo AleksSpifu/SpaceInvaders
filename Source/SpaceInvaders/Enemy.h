@@ -33,6 +33,7 @@ public:
 
 	class AGameManager* GameManager;
 
+	// Vet ikke om du leser her eller cpp fila først men dette blir forklart der
 	TArray<FVector> MoveDirections{
 		{ -1, 0, 0 },
 		{ 0, 1, 0 },

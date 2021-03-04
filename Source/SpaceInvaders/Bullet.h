@@ -23,8 +23,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	// For å holde styr på om den kommer fra spilleren eller ikke. Dette er fordi fiendene ikke skal drepe hverandre, og
+	// Spilleren skal ikke kunne drepe seg selv
 	bool bIsFromPlayer{ true };
 
+	// Resten her er ganske standard
 	UPROPERTY(EditAnywhere)
 		float MovementSpeed{ 1000.f };
 	FVector Movement{ 0.f };

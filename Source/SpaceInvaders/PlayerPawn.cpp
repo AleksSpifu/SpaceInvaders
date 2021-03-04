@@ -15,6 +15,7 @@ APlayerPawn::APlayerPawn()
 void APlayerPawn::BeginPlay()
 {
 	Super::BeginPlay();
+	// Skaffer en referanse til sjefen her og
 	GameManager = Cast<AGameManager>(UGameplayStatics::GetActorOfClass(GetWorld(), AGameManager::StaticClass()));
 }
 
@@ -22,6 +23,10 @@ void APlayerPawn::BeginPlay()
 void APlayerPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	// CurrentDirection blir oppdatert i de bevegelsesfunksjonene, så blir den matet inn her. Hvis tutorial stage er på 1 
+	// (Der det står "bruk WASD") så har spilleren bevegd på seg, og vi kan vise neste beskjed.
+
 	if (CurrentDirection.X != 0 || CurrentDirection.Y != 0) {
 		AddActorLocalOffset(CurrentDirection * DeltaTime, true);
 		if (TutorialStage == 1) {
@@ -30,7 +35,7 @@ void APlayerPawn::Tick(float DeltaTime)
 	}
 	
 	
-
+	// Sørg for at man ikke kan skyte altfor mange skudd fort. Denne kan stilles inn i editoren.
 	if (ShotTaken) {
 
 		if (LastShotTaken < CooldownBetweenShots) {
@@ -45,6 +50,9 @@ void APlayerPawn::Tick(float DeltaTime)
 
 void APlayerPawn::ToggleGodMode()
 {
+	// God mode her er ikke slik man kanskje vil tolke god mode med en gang. Man blir ikke udødelig, men man skyter en hel haug med kuler istedenfor 1.
+	// Dette var for å gjøre det raskere å teste når man ble ferdig med spillet for eksempel. 
+	// Det er også noen steg i tutorial som er relevant her, så hvis spilleren trykker riktig, gå til neste punkt.
 	bGodMode = !bGodMode;
 	if (TutorialStage == 3) {
 		TutorialStage++;
@@ -56,6 +64,8 @@ void APlayerPawn::ToggleGodMode()
 
 void APlayerPawn::Restart()
 {
+	// Sånn at man skal kunne trykke på en knapp for å restarte måtte jeg gjøre sånn her, jeg satte GameManager som en Actor før jeg tenkte på det, 
+	// Så det ble litt trælete å legge inn input component og hele greia der.
 	if (GameManager && GameManager->Timer > 1.f) {
 		GameManager->Restart();
 
@@ -76,6 +86,7 @@ void APlayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 void APlayerPawn::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	// Hvis spilleren blir skutt av en fiende, game over.
 	if (OtherActor->IsA(ABullet::StaticClass())) {
 		ABullet* bullet = Cast<ABullet>(OtherActor);
 		if (!bullet->bIsFromPlayer) {
@@ -88,7 +99,7 @@ void APlayerPawn::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActo
 
 void APlayerPawn::MoveRight(float speed)
 {
-
+	// Sørger for at spilleren ikke kan gå utafor bana, og heller ikke når det er game over. Samme opplegg i MoveUp
 	if (!GameManager->GameOver) {
 		FVector Location = GetActorLocation();
 		if (Location.Y > 1700) {
@@ -129,6 +140,7 @@ void APlayerPawn::MoveUp(float speed)
 
 void APlayerPawn::Shoot()
 {
+	// Her også er det noen tutorials som er relevante.
 	if (TutorialStage == 2) {
 		TutorialStage++;
 	}
@@ -138,6 +150,9 @@ void APlayerPawn::Shoot()
 	else if (TutorialStage == 7) {
 		TutorialStage++;
 	}
+
+	// Denne er ganske enkel den og, det som ser verst ut er egentlig når GodMode er på, men den og er ikke så fæl.
+
 	if (!GameManager->GameOver) {
 		if (Bullet && !ShotTaken) {
 			ShotTaken = true;
@@ -148,16 +163,23 @@ void APlayerPawn::Shoot()
 				}
 				FRotator Rotation = GetActorRotation();
 
+				// Lagrer rotasjonen, også starter på -90 og går til +90 med 20 graders intervall, og spawner en kule den retningen. 
 				for (int i = -90; i <= 90; i += 20) {
 					Rotation.Yaw = i;
 					ABullet* BulletSpawned = GetWorld()->SpawnActor<ABullet>(Bullet, GetActorLocation() + SpawnOffset, Rotation);
 
+					// Legger inn spillerens fart til kula slik at den beveger seg litt i retningen man beveger seg når man skyter.
+					// Syns dette var en kul måte å skyte selv om det er farlig å stå rett i skuddlinja til fiendene, og det åpner opp
+					// for mulighet om at man kan ha hindringer for eksempel, slik at man MÅ skyte skrått. Eller at kulene spretter på vegger kanskje,
+					// så kan man finne på mye kule måter å spille på. Jeg har jo ikke gjort noe av det, men muligheten er der ihvertfall.
 					if (BulletSpawned) {
 						BulletSpawned->PlayerMovement = CurrentDirection;
 					}
 				}
 
 			}
+
+			// Dette er den vanlige kula, samme opplegg med at farten til spilleren er med i bildet, men kun 1 kule til vanlig.
 			else {
 				ABullet* BulletSpawned = GetWorld()->SpawnActor<ABullet>(Bullet, GetActorLocation() + SpawnOffset, GetActorRotation());
 

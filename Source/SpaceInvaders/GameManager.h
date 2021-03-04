@@ -27,6 +27,7 @@ public:
 
 	class APlayerPawn* Player;
 
+	// Om den har fått beskjed om å spawne neste bølge eller ikke.
 	bool bSpawnWave{ false };
 
 	void SpawnWave();
@@ -36,11 +37,13 @@ public:
 	UPROPERTY(EditAnywhere)
 	int NumberOfWaves{ 1 };
 
+	// Dette er den som viser hvilken bølge spilleren er på.
 	UPROPERTY(BlueprintReadWrite)
 	FString OutputHUD{""};
 
 	bool TutorialFinished{ false };
 
+	// Og dette er den som viser alle de under her når man starter spillet.
 	UPROPERTY(BlueprintReadWrite)
 	FString TutorialHUD { "Tutorial!" };
 

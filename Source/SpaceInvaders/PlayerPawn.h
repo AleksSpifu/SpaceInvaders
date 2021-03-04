@@ -69,5 +69,4 @@ public:
 	UPROPERTY(EditAnywhere)
 	float CooldownBetweenShots{ 10.f };
 
-	//FViewportCursorLocation CursorLocation;
 };
